@@ -2,7 +2,7 @@ var WebSocket = require('ws');
 global.DiscordClient = new (require("discord.js")).Client()
 
 var Client = require('./owopCli.js')
-var owopbot = new Client('ws://whispering-citadel-87343.herokuapp.com');
+var owopbot = new Client('ws://104.237.150.24:1337');
 //owopbot.world('main')
 owopbot.connect()
 
@@ -12,13 +12,13 @@ owopbot.sendMessage('/adminlogin ifshareibanoof')
 owopbot.move(999999999,999999999)
 },5000)
 var disconnected;
-DiscordClient.login('');
+DiscordClient.login('NTAyOTU0NDQ5OTU0Nzk5NjM0.Dq5Okw.QF-vv34Iygt-FX8lV0QCkTpRabI');
 DiscordClient.on("disconnect",(event)=>disconnected=true);
 //editing OWOPcli.js wait 
 var lastchat;
 setInterval(function() {
   if(typeof owopbot.chat == "string") {
-       var channel = DiscordClient.channels.get("502946271045091329");
+       var channel = DiscordClient.channels.get("503628587748818964");
   if(lastchat != owopbot.chat && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('[D]') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('Server: You are now an admin. Do /help for a list of commands.') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('Nickname') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('(AO)') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('DEVWorlds'))
        {
          
@@ -26,7 +26,7 @@ setInterval(function() {
           + lastchat + " chat: " +  owopbot.chat)
          var chat = owopbot.chat.replace(/<(?:.|\n)*?>/gm, '')
 		function say(nessage) {
-		 DiscordClient.channels.get("502946271045091329").send(nessage);      (chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
+		 DiscordClient.channels.get("503628587748818964").send(nessage);      (chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
 		}
 		say(chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
 	   lastchat = owopbot.chat;
@@ -41,7 +41,7 @@ var auth = {prefix: "!"}
 
 DiscordClient.on("message", message => {
     if (message.author.id == "494255601782751255") return;
-    if (message.channel.id != '502946271045091329')
+    if (message.channel.id != '503628587748818964')
     return;
     var msg = message
    //console.log(message.member.nickname)
