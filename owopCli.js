@@ -15,7 +15,7 @@ Client.prototype = {
     if (this.agent) opt.agent = this.agent;
     if (this.local_address) opt.localAddress = this.local_address;
 
-    this.ws = new WebSocket("ws://whispering-citadel-87343.herokuapp.com", null, opt);
+    this.ws = new WebSocket("ws://104.237.150.24:1337", null, opt);
     this.ws.binaryType = "arraybuffer";
     this.ws.onopen = this.onConnect.bind(this);
     this.ws.onmessage = this.onMessage.bind(this);
