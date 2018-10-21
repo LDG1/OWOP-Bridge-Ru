@@ -12,7 +12,7 @@ owopbot.sendMessage('/adminlogin ifshareibanoof')
 owopbot.move(999999999,999999999)
 },5000)
 var disconnected;
-DiscordClient.login('NDk0MjU1NjAxNzgyNzUxMjU1.DqvW9A.HgqlrxKTA6njg60Tsa4QEYLbPdg');
+DiscordClient.login('');
 DiscordClient.on("disconnect",(event)=>disconnected=true);
 //editing OWOPcli.js wait 
 var lastchat;
