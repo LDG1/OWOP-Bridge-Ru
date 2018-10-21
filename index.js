@@ -18,7 +18,7 @@ DiscordClient.on("disconnect",(event)=>disconnected=true);
 var lastchat;
 setInterval(function() {
   if(typeof owopbot.chat == "string") {
-       var channel = DiscordClient.channels.get("503628587748818964");
+       var channel = DiscordClient.channels.get("503630562389524482");
   if(lastchat != owopbot.chat && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('[D]') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('Server: You are now an admin. Do /help for a list of commands.') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('Nickname') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('(AO)') && !owopbot.chat.replace(/<(?:.|\n)*?>/gm, '').startsWith('DEVWorlds'))
        {
          
@@ -26,7 +26,7 @@ setInterval(function() {
           + lastchat + " chat: " +  owopbot.chat)
          var chat = owopbot.chat.replace(/<(?:.|\n)*?>/gm, '')
 		function say(nessage) {
-		 DiscordClient.channels.get("503628587748818964").send(nessage);      (chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
+		 DiscordClient.channels.get("503630562389524482").send(nessage);      (chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
 		}
 		say(chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
 	   lastchat = owopbot.chat;
@@ -40,8 +40,8 @@ var auth = {prefix: "!"}
 
 
 DiscordClient.on("message", message => {
-    if (message.author.id == "494255601782751255") return;
-    if (message.channel.id != '503628587748818964')
+    if (message.author.id == "502954449954799634") return;
+    if (message.channel.id != '503630562389524482')
     return;
     var msg = message
    //console.log(message.member.nickname)
@@ -59,7 +59,7 @@ DiscordClient.on('message', (msg) => {
 	var cmd = msg.a.split(' ')[0].toLowerCase();
 	var input = msg.a.substring(cmd.length).trim();
 	if (cmd == 'o!js') {
-		if (msg.author.id == "246799235775725569") {
+		if (msg.author.id == "502954449954799634") {
   if (input.startsWith('```js\n')) {
     input = input.split('```js\n')[1]; 
   }
