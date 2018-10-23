@@ -3,19 +3,22 @@ global.DiscordClient = new (require("discord.js")).Client()
 
 var Client = require('./owopCli.js')
 var owopbot = new Client('ws://104.237.150.24:1337');
-//owopbot.world('main')
+owopbot.world = 'owop'
 owopbot.connect()
 
 setTimeout(function() {
 owopbot.sendMessage('/nick OWOP to Discord')
-owopbot.sendMessage('/adminlogin ifshareibanoof')
+owopbot.sendMessage('/adminlogin VMt0mLZumQ')
 owopbot.move(999999999,999999999)
 },5000)
 var disconnected;
-DiscordClient.login('NTAyOTU0NDQ5OTU0Nzk5NjM0.Dq5Okw.QF-vv34Iygt-FX8lV0QCkTpRabI');
+DiscordClient.login('');
 DiscordClient.on("disconnect",(event)=>disconnected=true);
 //editing OWOPcli.js wait 
 var lastchat;
+DiscordClient.on("ready",function() {
+	
+
 setInterval(function() {
   if(typeof owopbot.chat == "string") {
        var channel = DiscordClient.channels.get("503630562389524482");
@@ -26,7 +29,9 @@ setInterval(function() {
           + lastchat + " chat: " +  owopbot.chat)
          var chat = owopbot.chat.replace(/<(?:.|\n)*?>/gm, '')
 		function say(nessage) {
-		 DiscordClient.channels.get("503630562389524482").send(nessage);      (chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
+		 
+		 DiscordClient.guilds.get("455078712732549130").channels.get("503630562389524482").send(nessage)
+		 
 		}
 		say(chat.replace(/(<@[&!]*\d{18}>)|(@everyone)|(@here)/g, '').replace(/\s+/g, ' '))
 	   lastchat = owopbot.chat;
@@ -34,6 +39,7 @@ setInterval(function() {
        }
        //lastchat = owopbot.chat;
     }
+})
 })
 var auth = {prefix: "!"}
 
@@ -59,7 +65,7 @@ DiscordClient.on('message', (msg) => {
 	var cmd = msg.a.split(' ')[0].toLowerCase();
 	var input = msg.a.substring(cmd.length).trim();
 	if (cmd == 'o!js') {
-		if (msg.author.id == "502954449954799634") {
+		if (msg.author.id == "246799235775725569") {
   if (input.startsWith('```js\n')) {
     input = input.split('```js\n')[1]; 
   }
