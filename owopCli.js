@@ -34,7 +34,7 @@ Client.prototype = {
     if (this.world) {
       this.world = this.world.toLowerCase();
     } else {
-      this.world = "main";
+      this.world = "ru";
     }
     for (var i = 0; i < this.world.length && i < 24; i++) {
       var charCode = this.world.charCodeAt(i);
