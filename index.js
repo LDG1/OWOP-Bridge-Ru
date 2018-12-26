@@ -3,12 +3,11 @@ global.DiscordClient = new (require("discord.js")).Client()
 
 var Client = require('./owopCli.js')
 var owopbot = new Client('ws://104.237.150.24:1337');
-owopbot.world = 'owop'
+owopbot.world = 'ru'
 owopbot.connect()
 
 setTimeout(function() {
 owopbot.sendMessage('/nick OWOP to Discord')
-owopbot.sendMessage('/adminlogin VMt0mLZumQ')
 owopbot.move(999999999,999999999)
 },5000)
 var disconnected;
