@@ -3,7 +3,7 @@ var WebSocket = require('ws');
 function Client() {
   // chunks
   this.headers = { //headers for WebSocket connection.
-    'Origin': 'http://augustberchelmann.com/owop/'
+    'Origin': 'http://ourworldofpixels.com'
   };
 }
 
