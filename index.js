@@ -8,7 +8,6 @@ owopbot.connect()
 
 setTimeout(function() {
 owopbot.sendMessage('/nick OWOP to Discord')
-owopbot.sendMessage('/adminlogin VMt0mLZumQ')
 owopbot.move(999999999,999999999)
 },5000)
 var disconnected;
